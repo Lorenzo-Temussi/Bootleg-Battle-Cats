@@ -1,3 +1,5 @@
+package bbc;
+
 import java.awt.Color;
 import java.awt.Graphics;
 
@@ -27,6 +29,5 @@ public class CatFrame extends JFrame{
     f.setVisible(true);
 
     Background bg = new Background();
-    
   }
 }

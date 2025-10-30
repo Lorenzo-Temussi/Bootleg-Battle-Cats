@@ -1,3 +1,4 @@
+package bbc;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -61,5 +62,4 @@ public class Background extends JPanel{
     this.currentBackground = target;
     return target;
   }
-
 }
