@@ -11,10 +11,10 @@ import javax.swing.JPanel;
 
 public class Background extends JPanel{
  
-  private int currentBackground; // 0 to 36
+  private int currentBackground; // 0 to maxIndex
+
   private int maxIndex = 36;
   private int rowSize = 16;
-  private int currentRow = 0;
 
   private int bgWidth = 1000;
   private int bgHeight = 690;
@@ -24,7 +24,6 @@ public class Background extends JPanel{
 
   public Background() {
     try {
-      System.out.println(System.getProperty("user.dir") + "\\Pictures\\Backgrounds.png");
       this.spriteSheet = ImageIO.read(new File(System.getProperty("user.dir") + "\\Pictures\\Backgrounds.png"));
     } catch (IOException e) {
       e.printStackTrace();
@@ -35,7 +34,7 @@ public class Background extends JPanel{
     int index = 0;
     
 
-    for(int currentRow = 0; currentRow < maxIndex/rowSize; currentRow++) {
+    for(int currentRow = 0; true; currentRow++) {
       if(index >= maxIndex) {
           break;
         }
@@ -52,7 +51,6 @@ public class Background extends JPanel{
         index++;
       }    
     }
-
   }
 
   public int changeBackground(int target) {

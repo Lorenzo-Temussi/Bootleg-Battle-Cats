@@ -27,7 +27,9 @@ public class CatFrame extends JFrame{
     f.setTitle("Bootleg Battle Cats");
     f.setSize(1000, 1000);
     f.setVisible(true);
+    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     Background bg = new Background();
+    System.out.println(bg.changeBackground(12));
   }
 }
