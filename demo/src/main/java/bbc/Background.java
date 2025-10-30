@@ -5,6 +5,7 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
@@ -24,7 +25,8 @@ public class Background extends JPanel{
 
   public Background() {
     try {
-      this.spriteSheet = ImageIO.read(new File(System.getProperty("user.dir") + "\\Pictures\\Backgrounds.png"));
+      InputStream is = Background.class.getResourceAsStream("/Pictures/Backgrounds.png");
+      this.spriteSheet = ImageIO.read(is);
     } catch (IOException e) {
       e.printStackTrace();
     }
