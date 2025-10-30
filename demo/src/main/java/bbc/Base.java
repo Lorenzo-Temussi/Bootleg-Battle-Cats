@@ -1,5 +1,7 @@
 package bbc;
 
+import javax.swing.ImageIcon;
+
 public class Base {
   private int hp;
   private int position;
@@ -9,5 +11,7 @@ public class Base {
     this.hp = hp;
     this.position = position;
     this.direction = direction;
+
+    
   }
 }
