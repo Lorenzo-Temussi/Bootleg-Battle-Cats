@@ -1,35 +1,22 @@
 package bbc;
 
-import java.awt.Color;
-import java.awt.Graphics;
-
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+ 
+public class CatFrame {
 
-public class CatFrame{
-  public int WIDTH = 800;
-  public int HEIGHT = 600;
-  public String TITLE = "Bootleg Battle Cats";
-  
+    public static void main(String[] args) {
 
-  public CatFrame() {
-    /*this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    this.setVisible(true);
-        
-    this.setSize(WIDTH, HEIGHT);
-    this.setTitle(TITLE);*/
-  }
+        JFrame f = new JFrame();
+        f.setTitle("Bootleg Battle Cats");
+        f.setSize(1000, 1000);
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-  public static void main(String[] args) {  
+        Background bg = new Background();
+        f.add(bg);
 
-    JFrame f = new JFrame();
-    f.setTitle("Bootleg Battle Cats");
-    f.setSize(1000, 1000);
-    f.setVisible(true);
-    f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.setVisible(true);
 
-    Background bg = new Background();
-    System.out.println(bg.changeBackground(12));
-  }
+        int result = bg.changeBackground(1);
+        System.out.println("Current background: " + result);
+    }
 }
