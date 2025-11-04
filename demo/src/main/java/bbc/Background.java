@@ -14,8 +14,9 @@ public class Background extends JPanel {
     private int maxIndex = 36;     
     private int rowSize = 16;      
 
-    private int bgWidth = 1000;    
-    private int bgHeight = 690;    
+    private int bgWidth = 1024;    
+    private int bgHeight = 690;
+    private int lineWidth = 15;    
 
     private BufferedImage spriteSheet;
     private BufferedImage[] sprites;
@@ -31,19 +32,24 @@ public class Background extends JPanel {
         this.sprites = new BufferedImage[maxIndex];
 
         int index = 0;
+        bgWidth = (spriteSheet.getWidth() - 14* lineWidth) / 16; // literal magic formula don't edit
+        bgHeight = (spriteSheet.getHeight() - 2* lineWidth) / 3;
+        System.out.println(bgWidth);
 
         for (int currentRow = 0; true; currentRow++) {
             if (index >= maxIndex) break;
 
             for (int positionInRow = 0; positionInRow < rowSize; positionInRow++) {
                 if (index >= maxIndex) break;
-
+                System.out.println(index + 1);
                 sprites[index] = spriteSheet.getSubimage(
-                    positionInRow * bgWidth,
-                    currentRow * bgHeight,
-                    bgWidth,
+                    positionInRow * (bgWidth + lineWidth),
+                    currentRow * (bgHeight + lineWidth),
+                    ((index + 1) % 16 == 0) ? (spriteSheet.getWidth() - positionInRow * (bgWidth + lineWidth)) : bgWidth,
                     bgHeight
                 );
+                System.out.println("Coordinate pto partenza: x: " + positionInRow * (bgWidth + lineWidth) + "\ny: " + currentRow * bgHeight);
+                System.out.println("Coordinate pto arrivo: x: " + (positionInRow * (bgWidth + lineWidth) + bgWidth) + "\ny: " + (currentRow * bgHeight + bgHeight));
                 index++;
             }
         }

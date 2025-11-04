@@ -1,5 +1,7 @@
 package bbc;
 
+import java.util.Scanner;
+
 import javax.swing.JFrame;
  
 public class CatFrame {
@@ -16,7 +18,15 @@ public class CatFrame {
 
         f.setVisible(true);
 
-        int result = bg.changeBackground(1);
-        System.out.println("Current background: " + result);
+        int result = bg.changeBackground(0);
+        Scanner scan = new Scanner(System.in);
+
+        while (true) {
+          System.out.print("Input arg\n");
+          result = bg.changeBackground(scan.nextInt());
+          System.out.println("Current background: " + result);
+        }
+
+        
     }
 }
