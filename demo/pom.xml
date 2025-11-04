@@ -21,7 +21,7 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>bbc.CatFrame</mainClass>
+                  <mainClass>it.lorenzotemussi.bbc.CatFrame</mainClass>
                 </manifest>
               </archive>
             </configuration>
