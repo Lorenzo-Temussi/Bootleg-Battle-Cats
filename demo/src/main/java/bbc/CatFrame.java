@@ -1,4 +1,4 @@
-package bbc;
+package it.lorenzotemussi.bbc;
 
 import java.util.Scanner;
 
