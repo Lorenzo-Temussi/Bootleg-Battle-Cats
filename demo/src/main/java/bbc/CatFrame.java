@@ -26,7 +26,5 @@ public class CatFrame {
           result = bg.changeBackground(scan.nextInt());
           System.out.println("Current background: " + result);
         }
-
-        
     }
 }
