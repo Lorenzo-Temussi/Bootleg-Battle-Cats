@@ -26,8 +26,10 @@ public class Trooper {
 
   
   public Trooper(int id) {
+    DatabaseReader dbr = new DatabaseReader();
     //Import stats from excel sheet or smth
-    this.health = 400;
+    this.health = dbr.getCatStat(id, CatStats.HP);
+    System.out.println("HP: " + this.health);
     this.numberOfKnockbacks = 1;
     this.knockbackDistance = 1;
     this.attackPower = 20;
