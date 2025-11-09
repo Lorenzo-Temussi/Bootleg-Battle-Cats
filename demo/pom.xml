@@ -5,12 +5,43 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>bbc</groupId>
-    <artifactId>demo</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>BootlegBattleCats</artifactId>
+    <version>0.1-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
+    <build>
+      <pluginManagement>
+        <plugins>
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <configuration>
+              <archive>
+                <manifest>
+                  <mainClass>bbc.CatFrame</mainClass>
+                </manifest>
+              </archive>
+            </configuration>
+          </plugin>
+        </plugins>
+      </pluginManagement>
+    </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+  
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>4.1.0</version>
+    </dependency>
+  
+  </dependencies>
 </project>
