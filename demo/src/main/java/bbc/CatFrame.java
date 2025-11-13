@@ -3,14 +3,10 @@ package bbc;
 import java.util.Scanner;
 
 import javax.swing.JFrame;
-<<<<<<< HEAD
-
-=======
 import javax.xml.crypto.Data;
 
 import org.apache.poi.hssf.record.cf.DataBarFormatting;
  
->>>>>>> 75d7fd88a746501418dfac11d8722d228dc9d7f3
 public class CatFrame {
 
     public static void main(String[] args) {
@@ -40,12 +36,6 @@ public class CatFrame {
         Scanner scan = new Scanner(System.in);
 
         while (true) {
-<<<<<<< HEAD
-            System.out.print("Input arg\n");
-            result = bg.changeBackground(scan.nextInt());
-            System.out.println("Current background: " + result);
-        }
-=======
           System.out.print("Input arg\n");
           result = bg.changeBackground(scan.nextInt());
           System.out.println("Current background: " + result);
@@ -55,6 +45,5 @@ public class CatFrame {
         Trooper cat = new Trooper(0);
         
 
->>>>>>> 75d7fd88a746501418dfac11d8722d228dc9d7f3
     }
 }
