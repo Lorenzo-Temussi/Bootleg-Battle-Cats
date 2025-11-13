@@ -36,7 +36,6 @@ public class Background extends JPanel {
         bgHeight = (spriteSheet.getHeight() - 2* lineWidth) / 3;
 
         
-        //NEW
         for (int currentRow = 0; currentRow < maxRows; currentRow++) {
             for (int positionInRow = 0; positionInRow < maxRows; positionInRow++) {
                 index = currentRow  * maxRows + positionInRow;

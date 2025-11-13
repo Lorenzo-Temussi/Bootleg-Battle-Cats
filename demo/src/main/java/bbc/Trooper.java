@@ -8,7 +8,7 @@ public class Trooper {
   private int positionX;
   private int positionY;
 
-
+  private String name;                    // The name of the cat
   private int health;                     // At 0 health, the trooper despawns
   private int numberOfKnockbacks;         // If the trooper drops below i/nths of life with i < n, it's knocked back and stunned for a second 
   private int knockbackDistance;          // Distance of the knockback
@@ -27,15 +27,18 @@ public class Trooper {
   
   public Trooper(int id) {
     DatabaseReader dbr = new DatabaseReader();
-    //Import stats from excel sheet or smth
-    this.health = dbr.getCatStat(id, CatStats.HP);
-    System.out.println("HP: " + this.health);
-    this.numberOfKnockbacks = 1;
-    this.knockbackDistance = 1;
-    this.attackPower = 20;
+    
+    // This thing has complexity (x^2)/2, we can make it a bit better with a 
+    // dedicated function on DatabaseReader methinks, although stats shouldn't be 
+    // THAT many for each cat but better safe than sburated in the eyes
 
-    this.level = 2;
-    this.description = "This is a generic unit";
+    this.health = dbr.getCatScalarStat(id, "HP");
+    this.numberOfKnockbacks = dbr.getCatScalarStat(id, "NumKB");
+    this.knockbackDistance = dbr.getCatScalarStat(id, "KBDist");
+    this.attackPower = dbr.getCatScalarStat(id, "ATK");
+
+    this.name = dbr.getCatDescStat(id, "Name");
+    this.description = dbr.getCatDescStat(id, "Desc");
   }
 
   public void walk() {
@@ -63,5 +66,15 @@ public class Trooper {
   }
 
   
+  //Utils and debug
+  public void visualizeStats() {
+    System.out.println("Name: " + this.name);
 
+    System.out.println("HP: " + this.health);
+    System.out.println("ATK: " + this.attackPower);
+    System.out.println("NumKB: " + this.numberOfKnockbacks);
+    System.out.println("KBDist: " + this.knockbackDistance);
+
+    System.out.println("\nDescription:\n\n" + this.description);
+  }
 }

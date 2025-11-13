@@ -42,7 +42,8 @@ public class CatFrame {
         }*/
 
         //test database reader:
-        Trooper cat = new Trooper(0);
+        Trooper cat = new Trooper(2);
+        cat.visualizeStats();
         
 
     }
