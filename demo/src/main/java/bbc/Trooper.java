@@ -11,7 +11,7 @@ public class Trooper {
   private String name;                    // The name of the cat
   private int health;                     // At 0 health, the trooper despawns
   private int numberOfKnockbacks;         // If the trooper drops below i/nths of life with i < n, it's knocked back and stunned for a second 
-  private int knockbackDistance;          // Distance of the knockback
+private int speed;                        // How fast this unit can piss
   private int attackPower;                // The trooper's attacks deal this dmg
 
   private int level;                      // Goes 1 to 50
@@ -34,7 +34,7 @@ public class Trooper {
 
     this.health = dbr.getCatScalarStat(id, "HP");
     this.numberOfKnockbacks = dbr.getCatScalarStat(id, "NumKB");
-    this.knockbackDistance = dbr.getCatScalarStat(id, "KBDist");
+    this.speed = dbr.getCatScalarStat(id, "Speed");
     this.attackPower = dbr.getCatScalarStat(id, "ATK");
 
     this.name = dbr.getCatDescStat(id, "Name");
@@ -73,7 +73,7 @@ public class Trooper {
     System.out.println("HP: " + this.health);
     System.out.println("ATK: " + this.attackPower);
     System.out.println("NumKB: " + this.numberOfKnockbacks);
-    System.out.println("KBDist: " + this.knockbackDistance);
+    System.out.println("Speed: " + this.speed);
 
     System.out.println("\nDescription:\n\n" + this.description);
   }
